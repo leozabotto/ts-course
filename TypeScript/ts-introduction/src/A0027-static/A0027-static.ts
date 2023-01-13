@@ -1,32 +1,27 @@
 // super class
 export class Person {
+  static defaultAge = 0;
+
   constructor(
     private name: string,
     private lastName: string,
     private age: number,
-    private _cpf: string,
+    private cpf: string,
   ) {}
 
-  /* old way
-  getCpf(): string {
-    return this.cpf.replace(/\D/g, '');
+  normalMethod(): void {
+    console.log(Person.defaultAge);
   }
 
-  setCpf(cpf: string): void {
-    this.cpf = cpf;
-  }*/
-
-  // new way
-
-  set cpf(cpf: string) {
-    this._cpf = cpf;
+  static sayHello(): void {
+    console.log('Hello!');
   }
 
-  get cpf(): string {
-    return this._cpf.replace(/\D/g, '');
+  static createPerson(name: string, lastName: string): Person {
+    return new Person(name, lastName, 0, '000.000.000-00');
   }
 }
 
-const person = new Person('Leo', 'Zabotto', 20, '111.111.111-11');
-person.cpf = '222.222.222-22';
-console.log(person.cpf);
+const person = Person.createPerson('Leo', 'Zabotto');
+console.log(person);
+person.normalMethod();
