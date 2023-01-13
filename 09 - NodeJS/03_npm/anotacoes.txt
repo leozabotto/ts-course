@@ -1,0 +1,31 @@
+// Apresentação do package.json
+
+npm install pacote
+
+npm install pacote@1.0.0
+
+E -> versão exata
+--savedev
+--saveProd
+
+npm update
+
+npm uninstall pacote
+
+npm ls
+
+npm outdated
+
+
+-- Flags Dependencies --
+
+^ -> versão mais atual (minor, patch)
+~ -> permite atualizar apenas o patch
+
+dependencies <--> devDependencies
+
+
+-- Versionamento
+
+2.       1.      0
+major    minor   patch
